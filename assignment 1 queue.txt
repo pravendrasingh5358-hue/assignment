@@ -1,0 +1,254 @@
+Q1. Insert Elements into a Queue (Enqueue)
+Problem Statement:
+
+Write a Java program to implement a simple Queue using an array. Insert N elements into the
+queue using the Enqueue operation and display all elements.
+
+Input:
+N = 5
+
+Elements: 10 20 30 40 50
+Output:
+
+Queue: 10 20 30 40 50
+
+// solution
+
+
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+
+        int queue[] = new int[n];
+        int rear = -1;
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter element: ");
+            int element = sc.nextInt();
+
+            rear++;
+            queue[rear] = element;
+        }
+
+        System.out.print("Queue: ");
+        for (int i = 0; i <= rear; i++) {
+            System.out.print(queue[i] + " ");
+        }
+
+        sc.close();
+    }
+}
+
+
+
+
+
+Q2. Delete an Element from Queue (Dequeue)
+Problem Statement:
+
+Write a Java program to implement a simple Queue and delete the front element using the
+Dequeue operation. Display the deleted element and the remaining queue.
+
+Input:
+Queue: 10 20 30 40 50
+Output:
+Deleted Element: 10
+Queue: 20 30 40 50
+
+
+// solution
+
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+
+        int queue[] = new int[n];
+
+        System.out.println("Enter queue elements:");
+        for (int i = 0; i < n; i++) {
+            queue[i] = sc.nextInt();
+        }
+
+        int front = 0;
+
+        if (front == n) {
+            System.out.println("Queue is Empty");
+        } else {
+            System.out.println("Deleted Element: " + queue[front]);
+            front++;
+        }
+
+        System.out.print("Queue: ");
+        for (int i = front; i < n; i++) {
+            System.out.print(queue[i] + " ");
+        }
+
+        sc.close();
+    }
+}
+
+
+
+
+
+
+Q3. Find the Front Element of Queue
+Problem Statement:
+Write a Java program to find and display the front element of a simple Queue without
+deleting it.
+Input:
+Queue: 15 25 35 45 55
+Output:
+Front Element: 15
+
+
+ //  solution
+
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+
+        int queue[] = new int[n];
+
+        System.out.println("Enter queue elements:");
+        for (int i = 0; i < n; i++) {
+            queue[i] = sc.nextInt();
+        }
+
+        if (n == 0) {
+            System.out.println("Queue is Empty");
+        } else {
+            System.out.println("Front Element: " + queue[0]);
+        }
+
+        sc.close();
+    }
+}
+
+
+
+
+
+Q4. Display the Rear Element of Queue
+Problem Statement:
+Write a Java program to find and display the last inserted element (Rear) of a simple Queue
+without removing it.
+Input:
+Queue: 5 10 15 20 25
+Output:
+Rear Element: 25
+
+
+
+// soluition 
+
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+
+        int queue[] = new int[n];
+
+        System.out.println("Enter queue elements:");
+        for (int i = 0; i < n; i++) {
+            queue[i] = sc.nextInt();
+        }
+
+        if (n == 0) {
+            System.out.println("Queue is Empty");
+        } else {
+            System.out.println("Rear Element: " + queue[n - 1]);
+        }
+
+        sc.close();
+    }
+}
+
+
+
+
+Q5. Perform Multiple Operations on Queue
+Problem Statement:
+Write a Java program to perform the following operations on a simple Queue of size 5:
+1. Enqueue(10)
+2. Enqueue(20)
+3. Enqueue(30)
+4. Dequeue()
+5. Enqueue(40)
+6. Enqueue(50)
+7. Display the Queue.
+8. Display Front and Rear elements.
+Output:
+Deleted Element: 10
+Queue: 20 30 40 50
+Front: 20
+Rear: 50
+
+
+
+
+// solution
+
+
+
+class Main {
+    public static void main(String[] args) {
+
+        int queue[] = new int[5];
+        int front = 0, rear = -1;
+
+        rear++;
+        queue[rear] = 10;
+
+        rear++;
+        queue[rear] = 20;
+
+        rear++;
+        queue[rear] = 30;
+
+        System.out.println("Deleted Element: " + queue[front]);
+        front++;
+
+        rear++;
+        queue[rear] = 40;
+
+        rear++;
+        queue[rear] = 50;
+
+        System.out.print("Queue: ");
+        for (int i = front; i <= rear; i++) {
+            System.out.print(queue[i] + " ");
+        }
+
+        System.out.println();
+        System.out.println("Front: " + queue[front]);
+        System.out.println("Rear: " + queue[rear]);
+    }
+}
